@@ -75,11 +75,11 @@
 		    	</div>
 		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
 		    		<h5 class="card-title">Blog</h5>
-    				<p class="card-text"><a href="{{vm.profile.blog}}" target="_blank">Visitar</a></p>
+    				<p class="card-text"><a href="{{vm.profile.blog}}" target="_blank" ng-if="vm.profile.blog">Visitar</a> {{vm.profile.blog == '' ? '-' : ''}}</p>
 		    	</div>
 		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
 		    		<h5 class="card-title">Compania</h5>
-    				<p class="card-text">{{vm.profile.company}}</p>
+    				<p class="card-text">{{vm.profile.company ? vm.profile.company : '-'}}</p>
 		    	</div>
 		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
 		    		<h5 class="card-title">Seguidores</h5>
@@ -95,7 +95,7 @@
 		    	</div>
 		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
 		    		<h5 class="card-title">Ubicacion</h5>
-    				<p class="card-text">{{vm.profile.location}}</p>
+    				<p class="card-text">{{vm.profile.location ? vm.profile.location : '-'}}</p>
 		    	</div>		    	
 		    </div>
 		  </div>
