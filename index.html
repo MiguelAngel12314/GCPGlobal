@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Gestor</title>
+
+		<!-- Estilos css -->
+		<!-- <link href="css/bootstrap/bootstrap.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+		<link href="css/index.css" rel="stylesheet"> 
+
+	</head>
+	<body ng-app="app" class="theme-amber">
+
+		<div id="loader"><div></div><div></div><div></div><div></div></div>
+		<div class="container">
+			<ng-view></ng-view>
+		</div>
+
+		<!-- Librerias -->
+		<script src="librerias/jquery/jquery.min.js"></script>
+		<script src="librerias/notify/notify.min.js"></script>
+
+		<!-- <script src="librerias/bootstrap/bootstrap.min.js"></script> -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<script src="https://cdn.anychart.com/releases/8.2.0/js/anychart-base.min.js"></script>
+  		<script src="https://cdn.anychart.com/releases/8.2.0/js/anychart-ui.min.js"></script>
+
+		<!-- AngulaJs -->
+		<script src="librerias/angular/angular.min.js"></script>
+		<script src="librerias/angular/angular-route.min.js"></script>
+
+		<script src="app/app.js"></script>
+		<script src="app/rutas.js"></script>
+
+		<!--Usuarios-->
+		<script src="app/modulos/usuarios/usuarios.module.js"></script>
+		<script src="app/modulos/usuarios/usuariosCtrl.js"></script>
+		<script src="app/modulos/usuarios/usuariosService.js"></script>
+		<script src="app/modulos/usuarios/factories/mapa.factory.js"></script>
+		
+		<div class="loader-conteiner" id="loaderMain">
+			<div class="loader"></div>
+		</div>
+
+	</body>
+</html>

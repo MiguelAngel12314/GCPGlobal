@@ -1,0 +1,109 @@
+<div class="row" style="padding-top: 30px;">
+	<div class="col-md-4 col-sm-2">
+		<div class="form-group text-right">
+		</div>
+	</div>
+	<div class="col-md-8 col-sm-10">
+	    <div class="input-group">			        
+		    <input type="text" 
+		    	   class="form-control" 
+		    	   ng-model="vm.user.q" 
+		    	   id="Nombre" 
+		    	   placeholder="Escribe el nombre que deseas buscar">
+
+		    <span class="input-group-btn">
+	          <button class="btn btn-primary" type="button" ng-click="vm.buscar()">Buscar</button>
+	        </span>
+		  </div>
+	</div>
+</div>
+<div class="row" ng-show="vm.users.length > 0" style="padding-top: 23px;">
+	<div class="col col-md-6">
+		<table class="table table-hover">
+			<thead class="thead-dark">
+				<th>#</th>
+				<th>ID</th>
+				<th>Usuario</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="users in vm.users | limitTo : 10" 
+					style="cursor: pointer;" 
+					ng-click="vm.obtainProfile(users.url);"> 
+					<td>{{$index + 1}}</td>
+					<td>{{users.id}}</td>
+					<td>{{users.login}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col col-md-6">		
+		<div id="container"></div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalPerfil" tabindex="-1" role="dialog" aria-labelledby="modalProfile" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      	<i class="fas fa-address-card" style="font-size: 43px;"></i> 
+        <h5 class="modal-title" id="exampleModalLongTitle">  PERFIL</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+		  <img class="card-img-top" src="{{vm.profile.avatar_url}}">
+		  <div class="card-body">
+		    <div class="row">
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">ID</h5>
+    				<p class="card-text">{{vm.profile.id}}</p>    		
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Login</h5>
+    				<p class="card-text">{{vm.profile.login}}</p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Nombre</h5>
+    				<p class="card-text">{{vm.profile.name}}</p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Bio</h5>
+    				<p class="card-text">{{vm.profile.bio || '-'}}</p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Blog</h5>
+    				<p class="card-text"><a href="{{vm.profile.blog}}" target="_blank">Visitar</a></p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Compania</h5>
+    				<p class="card-text">{{vm.profile.company}}</p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Seguidores</h5>
+    				<p class="card-text">{{vm.profile.followers}}</p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Siguiendo</h5>
+    				<p class="card-text">{{vm.profile.following}}</p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Visitar Git</h5>
+    				<p class="card-text"><a href="{{vm.profile.html_url}}" target="_blank">Visitar</a></p>
+		    	</div>
+		    	<div class="col col-md-6 col-sm-12" style="margin-bottom: 20px;">
+		    		<h5 class="card-title">Ubicacion</h5>
+    				<p class="card-text">{{vm.profile.location}}</p>
+		    	</div>		    	
+		    </div>
+		  </div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
